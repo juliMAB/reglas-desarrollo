@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "beneficios.descuentos/v1.0.0",
+  "title": "Lista de descuentos",
+  "description": "Respuesta de GET /api/beneficios. Un array de beneficios. Un array vacío es un resultado válido.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "fuente",
+      "titulo",
+      "tipo_descuento",
+      "vigencia_desde",
+      "vigencia_hasta",
+      "vigente"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Identificador estable. Formato <fuente>:<slug>."
+      },
+      "fuente": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Origen del dato. Valores observados: modo, descuentito."
+      },
+      "titulo": {
+        "type": "string",
+        "minLength": 1
+      },
+      "proveedor": { "type": ["string", "null"] },
+      "categoria": { "type": ["string", "null"] },
+      "descuento_texto": {
+        "type": ["string", "null"],
+        "description": "Texto humano del descuento, tal como lo muestra la UI."
+      },
+      "tipo_descuento": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Valor observado hoy: porcentaje. Otros tipos implican minor de contrato."
+      },
+      "porcentaje": {
+        "type": ["string", "null"],
+        "description": "Porcentaje como string decimal. Null si el descuento no es porcentual."
+      },
+      "tope": { "type": ["string", "null"] },
+      "tope_moneda": { "type": ["string", "null"] },
+      "tope_periodo": {
+        "type": ["string", "null"],
+        "description": "Valores observados: month, day, campaign."
+      },
+      "tope_cantidad": { "type": ["string", "number", "null"] },
+      "tope_unidad": { "type": ["string", "null"] },
+      "tope_reintegro": { "type": ["string", "number", "null"] },
+      "tope_reintegro_texto": { "type": ["string", "null"] },
+      "vigencia_desde": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO-8601 en UTC."
+      },
+      "vigencia_hasta": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO-8601 en UTC."
+      },
+      "vigente": {
+        "type": "boolean",
+        "description": "Calculado por el productor. El consumidor no lo recalcula."
+      },
+      "medio_pago": { "type": ["string", "null"] },
+      "banco": { "type": ["string", "null"] },
+      "membresia": { "type": ["string", "null"] },
+      "bancos_aplica": { "type": ["array", "null"] },
+      "canales": { "type": ["string", "null"] },
+      "dias_validez": { "type": ["string", "null"] },
+      "requisitos": { "type": ["array", "null"] },
+      "condiciones": { "type": ["array", "null"] },
+      "elegibilidad": { "type": ["string", "null"] },
+      "promo_value": { "type": ["string", "null"] },
+      "descripcion": { "type": ["string", "null"] },
+      "descripcion_texto": { "type": ["string", "null"] },
+      "image_url": { "type": ["string", "null"] },
+      "online": { "type": ["boolean", "null"] },
+      "id_origen": { "type": ["string", "null"] },
+      "ia_extract": { "type": ["object", "null"] },
+      "actualizado_en": { "type": ["string", "null"] },
+      "nuevoClienteDias": {
+        "type": ["integer", "null"],
+        "description": "Antigüedad mínima de cliente en días, si aplica."
+      }
+    },
+    "additionalProperties": true
+  }
+}
