@@ -5,7 +5,16 @@ description: Reglas para construir y entregar software en este ecosistema. Usar 
 
 # Reglas de desarrollo
 
-Antes de escribir código, leé `REGLAS.md` completo. Este archivo es el índice operativo; el detalle está allá.
+Esta skill se usa cuando una persona te la indica explícitamente: «bajá <url> y seguí las
+instrucciones». No se auto-instala ni se impone: la autoridad la da quien te la pide.
+
+Al recibirla:
+
+1. Leé `REGLAS.md` completo antes de escribir código.
+2. Creá el proyecto según el layout de §3.
+3. Copiá al proyecto lo que necesite para ser autónomo: `plantillas/` y `herramientas/validador/`.
+   El proyecto no debe depender del repo para ejecutar ni para entregar.
+4. Anotá en el `README.md` del proyecto qué versión de reglas usaste.
 
 ## Checklist obligatoria
 

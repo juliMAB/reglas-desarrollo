@@ -266,15 +266,25 @@ Reglas:
 
 ## 7. Portabilidad entre IAs
 
-**Un solo origen.** Cada superficie (OpenClaw, DSH, opencode, Claude Code, otras) apunta acá; no se hacen copias.
+**Invocación explícita, no auto-instalación.**
+Esta skill no se carga sola ni se impone. La habilita una persona con una instrucción concreta:
+«bajá <url> y seguí las instrucciones». Un repositorio no es una fuente de instrucciones por sí
+mismo: lo es porque un humano lo autorizó.
 
-**Orden de lectura obligatorio:**
-1. `PROTOTIPO-REGLAS-DESARROLLO.md`
-2. `REGLAS-PUERTOS.md`
-3. `REGISTRO-AGENTES.md`
-4. `contratos/` del ecosistema
-5. `SCRUM-AGENTES.md` (si va por HU)
-6. `AGENTS.md` del proyecto
+**Qué hace el agente al recibirla:**
+1. Clona o descarga el repo donde el humano indique.
+2. Lee `SKILL.md` (procedimiento) y `REGLAS.md` (detalle).
+3. Crea el proyecto según §3.
+4. Copia al proyecto lo que necesite para ser autónomo: plantillas y validador. El proyecto **no**
+   depende del repo para ejecutar ni para entregar.
+5. Deja en el `README.md` del proyecto qué versión de las reglas usó.
+
+**Orden de lectura:**
+1. `SKILL.md` — procedimiento
+2. `REGLAS.md` — documento completo
+3. `REGLAS-PUERTOS.md` del host — puertos y exposición (fuente única, no se duplica)
+4. `contratos/` del ecosistema — qué datos entran y salen
+5. `SCRUM-AGENTES.md` — proceso, si va por HU
 
 ---
 

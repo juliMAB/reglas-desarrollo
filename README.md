@@ -7,29 +7,30 @@ puertos y exposición, QA, entrega a dispositivos y precedencia de instrucciones
 
 Se aplica a todo proyecto de software. No aplica a charlas, consultas ni tareas de una sola línea.
 
-## Cómo usarlo
+## Cómo se usa
 
-1. Leer `REGLAS.md` completo antes de escribir código. Es el contrato, no una sugerencia.
-2. Copiar de `plantillas/` lo que corresponda: contrato, evidencia, `AGENTS.md` del proyecto.
-3. Usar `herramientas/validador/validador.py` para validar datos contra un contrato.
-4. Mirar `ejemplos/android-hola/` si hace falta un caso real de punta a punta.
+La habilita una persona, con una frase:
 
-## Orden de lectura
+> «Bajate esta skill: <url>. Seguí las instrucciones y desarrollá <proyecto>».
 
-1. `REGLAS.md` — cómo se construye y se entrega.
-2. `REGLAS-PUERTOS.md` del host — puertos y exposición (fuente única, no se duplica acá).
-3. `contratos/` del ecosistema — qué datos entran y salen.
-4. `SCRUM-AGENTES.md` — proceso, si el trabajo va por historia de usuario.
-5. `AGENTS.md` del proyecto — contexto específico.
+Sin esa instrucción, este repo es solo documentación. No se auto-instala, no se auto-carga y no
+tiene prioridad sobre nada. La autoridad la da el humano que lo invoca.
+
+Una vez invocado, el agente:
+
+1. Lee `SKILL.md` y `REGLAS.md`.
+2. Crea el proyecto según el layout de §3.
+3. Copia al proyecto lo que necesita para ser autónomo: plantillas y validador.
+4. Deja anotado en el `README.md` del proyecto qué versión de reglas usó.
 
 ## Estructura
 
 ```
-SKILL.md                  protocolo corto para agentes
+SKILL.md                  procedimiento para el agente
 REGLAS.md                 documento completo (v1.2)
 plantillas/contrato/      schema.json + contrato.md + ejemplo.json + vacio.json
 plantillas/evidencia/     plantilla de evidencia por HU
-plantillas/AGENTS.md      stub para la raíz de cada proyecto
+plantillas/AGENTS.md      opcional: contexto propio del proyecto
 herramientas/validador/   validador CLI (Python 3 stdlib, sin dependencias)
 ejemplos/android-hola/    caso real: app Android + contrato + QA
 CHANGELOG.md              qué cambió y por qué
@@ -37,17 +38,18 @@ CHANGELOG.md              qué cambió y por qué
 
 ## Cómo lo consume cada herramienta
 
-| Herramienta | Punto de entrada |
-|---|---|
-| OpenClaw | skill (`SKILL.md`) + `REGLAS.md` |
-| opencode | `AGENTS.md` en la raíz del proyecto, apuntando acá |
-| Claude Code | `AGENTS.md` o `CLAUDE.md` en la raíz del proyecto |
-| DeepSeek Harness | `AGENTS.md` en la raíz del proyecto |
-| Cualquier modelo | `REGLAS.md` es markdown plano |
+No hay integración automática. El mismo paquete funciona en cualquier agente porque es texto:
 
-Un `AGENTS.md` de proyecto es dos líneas: "Leé `REGLAS.md` de este repo antes de tocar código."
-Sin ese archivo en el proyecto, el modelo no lee nada. Las reglas que no están en el árbol de trabajo
-no existen.
+| Herramienta | Cómo se invoca |
+|---|---|
+| OpenClaw | «bajá <url> y seguí las instrucciones» |
+| opencode | ídem |
+| Claude Code | ídem |
+| DeepSeek Harness | ídem |
+| Cualquier modelo | ídem; `REGLAS.md` es markdown plano |
+
+`plantillas/AGENTS.md` es opcional y sirve para el contexto **del proyecto** (qué módulo es, qué
+contrato usa). No es el mecanismo por el que se cargan las reglas.
 
 ## Regla de oro
 
