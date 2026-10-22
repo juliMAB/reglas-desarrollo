@@ -1,6 +1,16 @@
 # reglas-desarrollo — cómo se construye software en este ecosistema
 
-**Versión:** 1.2 · **Estado:** en iteración.
+**Versión:** 1.2 · **Estado:** release para un solo agente.
+
+## Alcance de esta versión
+
+Esta versión está pensada y probada para **un solo agente** que ejecuta todos los roles:
+construye, se autoimpone las puertas y entrega evidencia. No define reparto de roles ni handoff
+entre agentes; eso corresponde a una versión posterior (2.0).
+
+Lo que sí exige: contrato, layout por ecosistema, puertos, QA propio y evidencia verificable.
+El control de la evidencia queda del lado humano, porque el agente que construye es el mismo que
+la produce.
 
 Este repo es la fuente única de las reglas de desarrollo: arquitectura modular por contrato,
 puertos y exposición, QA, entrega a dispositivos y precedencia de instrucciones.
