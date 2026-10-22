@@ -460,8 +460,7 @@ mostrando el texto del contrato. Juli lo verificó en el teléfono: "hola desde 
 - El host con USB no era parte del entorno → D3 y E7.
 - Evidencia humana sin etiqueta → D4.
 
-**Acceso:** `100.114.169.105` (DESKTOP-5NTIR2F, Windows) quedó con OpenSSH y clave autorizada
-(usuario `JulianAguirre`, sin contraseña). `adb` existe en
+**Acceso:** el host con el dispositivo quedó con OpenSSH y una clave autorizada, sin contraseña. `adb` existe en
 `C:\Users\JulianAguirre\AppData\Local\Android\Sdk\platform-tools`.
 Pendiente: el teléfono no aparece en `adb devices` (solo `emulator-5554 offline`). Sin eso, D3
 sigue sin cumplirse y el QA en dispositivo no se puede hacer.
